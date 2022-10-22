@@ -1,0 +1,15 @@
+/home/ivan/C#/Seminars/Seminar_3/task_3/obj/Debug/net6.0/task_3.csproj.AssemblyReference.cache
+/home/ivan/C#/Seminars/Seminar_3/task_3/obj/Debug/net6.0/task_3.GeneratedMSBuildEditorConfig.editorconfig
+/home/ivan/C#/Seminars/Seminar_3/task_3/obj/Debug/net6.0/task_3.AssemblyInfoInputs.cache
+/home/ivan/C#/Seminars/Seminar_3/task_3/obj/Debug/net6.0/task_3.AssemblyInfo.cs
+/home/ivan/C#/Seminars/Seminar_3/task_3/obj/Debug/net6.0/task_3.csproj.CoreCompileInputs.cache
+/home/ivan/C#/Seminars/Seminar_3/task_3/bin/Debug/net6.0/task_3
+/home/ivan/C#/Seminars/Seminar_3/task_3/bin/Debug/net6.0/task_3.deps.json
+/home/ivan/C#/Seminars/Seminar_3/task_3/bin/Debug/net6.0/task_3.runtimeconfig.json
+/home/ivan/C#/Seminars/Seminar_3/task_3/bin/Debug/net6.0/task_3.dll
+/home/ivan/C#/Seminars/Seminar_3/task_3/bin/Debug/net6.0/ref/task_3.dll
+/home/ivan/C#/Seminars/Seminar_3/task_3/bin/Debug/net6.0/task_3.pdb
+/home/ivan/C#/Seminars/Seminar_3/task_3/obj/Debug/net6.0/task_3.dll
+/home/ivan/C#/Seminars/Seminar_3/task_3/obj/Debug/net6.0/ref/task_3.dll
+/home/ivan/C#/Seminars/Seminar_3/task_3/obj/Debug/net6.0/task_3.pdb
+/home/ivan/C#/Seminars/Seminar_3/task_3/obj/Debug/net6.0/task_3.genruntimeconfig.cache
