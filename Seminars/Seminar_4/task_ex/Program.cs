@@ -17,7 +17,7 @@ int Get_sum_numbers(int number)
 
     for(int i = 0 ;i <= number;i++)
     {
-        sum += i;
+        sum_m += i;
     }
     return sum_m;
 }
