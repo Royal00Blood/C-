@@ -1,2 +1,1 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Задайте двумерный массив. Напишите метод, который упорядочит по убыванию элементы каждой строки двумерного массива. 
