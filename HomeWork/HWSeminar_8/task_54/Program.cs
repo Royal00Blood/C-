@@ -12,7 +12,7 @@ if(!isParsed_1 || !isParsed_2)
 
 int [,] array = CreateRandom2DArray(m,n);
 Print2Darray(array);
-
+Print2Darray(SortedRowInArray(array,FindMaxElementOnRow(array)));
 
 int[,] CreateRandom2DArray(int num_m, int num_n)
 {
@@ -55,20 +55,25 @@ int [] FindMaxElementOnRow(int[,]array)
     }
     return max_elements_row;
 }
-
-
 int[,] SortedRowInArray(int[,] array, int [] max_array_in_row)
 {
-    int [,] array_rez = new int [array.GetLength(0),array.GetLength(0)];
-    
+    int [,] array_rez = new int [array.GetLength(0),array.GetLength(1)];
+    int j_index = 0;
+    //int [] array_1 = new int [array.GetLength(1)];
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        array_rez[i,0] = max_array_in_row[i];
+
+        for (int j = 1; j < array.GetLength(1); j++)
         {
-            if (max_array_in_row[i] < array[i,j])
+            for (int k = j; k < array.GetLength(1); k++)
             {
-                
+                if (array_rez[i,j-1] < array[i,j])
+                {
+                    j_index = j;
+                }  
             }
+            array_rez[i,j] = array[i,j_index];
         }
     }
     return array_rez;
