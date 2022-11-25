@@ -12,7 +12,7 @@ if(!isParsed_1 || !isParsed_2)
 
 int [,] array = CreateRandom2DArray(m,n);
 Print2Darray(array);
-Print2Darray(SortedRowInArray(array,FindMaxElementOnRow(array)));
+Print2Darray(SortedElementOnRow(array));
 
 int[,] CreateRandom2DArray(int num_m, int num_n)
 {
@@ -38,44 +38,35 @@ void Print2Darray(int [,] array)
         Console.WriteLine();
     }
 }
-int [] FindMaxElementOnRow(int[,]array)
+int [,] SortedElementOnRow(int[,]array)
 {
-    int [] max_elements_row = new int [array.GetLength(0)];
-    int max_element = array[0,0];
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if( max_element < array[i,j])
+        for (int i = 0; i < array.GetLength(0); i++)
             {
-                max_element = array[i,j];
-            }
-        }
-        max_elements_row[i] = max_element;
-    }
-    return max_elements_row;
-}
-int[,] SortedRowInArray(int[,] array, int [] max_array_in_row)
-{
-    int [,] array_rez = new int [array.GetLength(0),array.GetLength(1)];
-    int j_index = 0;
-    //int [] array_1 = new int [array.GetLength(1)];
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        array_rez[i,0] = max_array_in_row[i];
-
-        for (int j = 1; j < array.GetLength(1); j++)
-        {
-            for (int k = j; k < array.GetLength(1); k++)
-            {
-                if (array_rez[i,j-1] < array[i,j])
+                for (int i1 = 0; i1 < array.GetLength(1); i1++)
                 {
-                    j_index = j;
-                }  
+                //Вложенный цикл (количество повторений, равно количеству элементов массива минус 1 и минус количество выполненных повторений основного цикла)
+                    for (int j = 0; j < array.GetLength(1) - 1 - i1; j++)
+                    {
+                    //Если элемент массива с индексом j больше следующего за ним элемента
+                        if (array[i,j] < array[i,j + 1])
+                        {
+                        //Меняем местами элемент массива с индексом j и следующий за ним
+                            Swap(ref array[i,j], ref array[i, j + 1]);
+                        }
+                    }
+                }
             }
-            array_rez[i,j] = array[i,j_index];
-        }
-    }
-    return array_rez;
+    
+    return array;
 }
+void Swap(ref int aFirstArg, ref int aSecondArg)
+        {
+            //Временная (вспомогательная) переменная, хранит значение первого элемента
+            int tmpParam = aFirstArg;
+            //Первый аргумент получил значение второго
+            aFirstArg = aSecondArg;
+            //Второй аргумент, получил сохраненное ранее значение первого
+            aSecondArg = tmpParam;
+        }
+
 
