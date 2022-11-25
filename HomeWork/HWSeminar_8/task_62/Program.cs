@@ -7,26 +7,38 @@
 11 16 15 06
 10 09 08 07
 */
-void Print2DarraySpiral(int [,] array)
+Console.Write("Input count row in matrix-> ");
+bool isParsed_1 = int.TryParse(Console.ReadLine(),out int a);
+
+Print2Darray(Print2DarraySpiral(a));
+void Print2Darray(int [,] array)
 {
-    int Ni = 4;
-    int Nj = 4;
-    int i1 = 0;
-    int j1 = 0;
-    int number = 0;
-    for (int i = i1; i < Ni; i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = j1 ; j < Nj; j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            array[j,i] = number + 1;
+            Console.Write($"{array[i,j]} ");
         }
-        j1++;
+        Console.WriteLine();
     }
-    for (int i = 0; i < Ni; i++)
-    {
-        for (int j = 0; j < Nj; j++)
-        {
-            array[j,i] = number + 1;
-        }
-    }
+}
+int [,] Print2DarraySpiral(int n)
+{
+    var result = new int[n, n];
+            for (int currentChar = 1, padding = 0; padding < n/2; padding++)
+            {
+                for (int j = padding; j < n - padding; j++)
+                    result[padding, j] = currentChar;
+                for (int j = padding; j < n - padding; j++)
+                    result[n - padding - 1, j] = currentChar;
+                for (int i = padding + 2; i < n - padding - 1; i++)
+                    result[i, padding] = currentChar;
+                for (int i = padding + 1; i < n - padding - 1; i++)
+                    result[i, n - padding - 1] = currentChar;
+                currentChar = 1 - currentChar;
+                result[padding + 1, padding] = currentChar;
+            }
+            if (n%2 != 0 && result[0, 0] == 1)
+                result[n/2, n/2] = 1;
+            return result;
 }
