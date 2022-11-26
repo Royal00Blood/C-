@@ -7,7 +7,6 @@
 11 16 15 06
 10 09 08 07
 */
-
 Print2Darray(Print2DarraySpiral(4));
 void Print2Darray(int [,] array)
 {
