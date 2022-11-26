@@ -7,10 +7,8 @@
 11 16 15 06
 10 09 08 07
 */
-Console.Write("Input count row in matrix-> ");
-bool isParsed_1 = int.TryParse(Console.ReadLine(),out int a);
 
-Print2Darray(Print2DarraySpiral(a));
+Print2Darray(Print2DarraySpiral(4));
 void Print2Darray(int [,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -24,21 +22,62 @@ void Print2Darray(int [,] array)
 }
 int [,] Print2DarraySpiral(int n)
 {
+    int Ni = n;
+    int Nj = n;
+    int j1 = 0;
+    int number = 0;
     var result = new int[n, n];
-            for (int currentChar = 1, padding = 0; padding < n/2; padding++)
+
+        int index = 0;
+        //первая срока
+            for (int j = j1; j < Nj; j++)
             {
-                for (int j = padding; j < n - padding; j++)
-                    result[padding, j] = currentChar;
-                for (int j = padding; j < n - padding; j++)
-                    result[n - padding - 1, j] = currentChar;
-                for (int i = padding + 2; i < n - padding - 1; i++)
-                    result[i, padding] = currentChar;
-                for (int i = padding + 1; i < n - padding - 1; i++)
-                    result[i, n - padding - 1] = currentChar;
-                currentChar = 1 - currentChar;
-                result[padding + 1, padding] = currentChar;
+                result[index,j] = number;
+                number++;
             }
-            if (n%2 != 0 && result[0, 0] == 1)
-                result[n/2, n/2] = 1;
-            return result;
+        // последний столбик
+            index = 3;
+            j1 = 1;
+             for (int j = j1; j < Nj; j++)
+            {
+                result[j,index] = number;
+                number++;
+            }
+        //нижняя строка
+            j1 = 2;
+            Nj = 0;
+             for (int j = j1; j >= Nj; j--)
+            {
+                result[index,j] = number;
+                number++;
+            }
+        //первый столбик
+            index = 0;
+            j1 = 2;
+            Nj = 1;
+             for (int j = j1; j >= Nj; j--)
+            {
+                result[j,index] = number;
+                number++;
+            }
+        //вторая строка
+            index = 1;
+            j1 = 1;
+            Nj = 2;
+            for (int j = j1; j <= Nj; j++)
+            {
+                result[index,j] = number;
+                number++;
+            }
+        //третья строка
+            index = 2;
+            j1 = 2;
+            Nj = 1;
+            for (int j = j1; j >= Nj; j--)
+            {
+                result[index,j] = number;
+                number++;
+            }
+    return result;
+
 }
