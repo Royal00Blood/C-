@@ -15,7 +15,7 @@ if (M<N)
 }
 else
 {
-    Console.WriteLine("Error start number > end number");
+    Console.WriteLine("Error");
 }
 
 void PrintNextNumber(int m,int n)
